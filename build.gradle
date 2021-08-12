@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.dargen'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.10'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'Start')
+    }
+}
+tasks.withType(JavaCompile)*.options*.encoding = 'UTF-8'
